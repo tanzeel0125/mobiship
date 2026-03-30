@@ -27,7 +27,7 @@ const MobiShipTopNav = ({ showBack }: TopNavProps) => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-card border-b border-border">
+      <header className="sticky top-0 z-40 bg-card border-b border-border" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
         <div className="flex items-center justify-between h-14 px-4">
           {showBack ? (
             <button onClick={() => navigate(-1)} className="p-1 text-foreground">

@@ -15,7 +15,7 @@ const BottomTabBar = () => {
   const activeTab = tabs.find(t => location.pathname.startsWith(t.path))?.path;
 
   return (
-    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-card border-t border-border z-50">
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-card border-t border-border z-50" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="flex items-center justify-around h-16 px-2">
         {tabs.map(({ path, label, icon: Icon }) => {
           const active = activeTab === path;
