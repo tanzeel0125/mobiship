@@ -28,7 +28,8 @@ const Splash = () => {
         <img
           src={appIcon}
           alt="MobiShip"
-          className="w-28 h-28 rounded-[24px] shadow-2xl"
+          className="w-28 h-28 rounded-[24px]"
+          style={{ boxShadow: '0 8px 40px rgba(255,255,255,0.15), 0 2px 12px rgba(0,0,0,0.3)' }}
         />
         <div className="flex items-baseline gap-0.5 mt-2">
           <span className="text-white font-heading font-extrabold text-3xl tracking-tight">MOBI</span>
