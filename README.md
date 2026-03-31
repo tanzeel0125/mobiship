@@ -128,7 +128,3 @@ All custom source code, UI components, business logic, database schemas, and dep
 ## License
 
 Private — All rights reserved. Not licensed for public use or redistribution.
-
-## Contact
-
-**WhatsApp** — [+1 (920) 828-6711](https://wa.me/19208286711)
