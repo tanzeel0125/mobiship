@@ -11,17 +11,13 @@ MobiShip simplifies the consumer shipping experience by handling the full shipme
 ## Preview
 
 <img width="385" height="648" alt="Screen 1" src="https://github.com/user-attachments/assets/dc84af9e-b8f8-4f93-95eb-038672072256" />
-<img width="385" height="648" alt="Screen 1" src="https://github.com/user-attachments/assets/dc84af9e-b8f8-4f93-95eb-038672072256" />
-
-<img width="377" height="650" alt="Screen 2" src="https://github.com/user-attachments/assets/8c02b126-6bb6-4ef3-9aa3-e8132ed9cab2" />
 <img width="377" height="650" alt="Screen 2" src="https://github.com/user-attachments/assets/8c02b126-6bb6-4ef3-9aa3-e8132ed9cab2" />
 
 <img width="375" height="650" alt="Screen 3" src="https://github.com/user-attachments/assets/69d15c3e-ac84-48a2-bc14-588bb98c3da9" />
-<img width="375" height="650" alt="Screen 3" src="https://github.com/user-attachments/assets/69d15c3e-ac84-48a2-bc14-588bb98c3da9" />
-
-<img width="376" height="650" alt="Screen 4" src="https://github.com/user-attachments/assets/82fd86e7-e3ea-4dce-86d6-a80e48f4e02a" />
 <img width="376" height="650" alt="Screen 4" src="https://github.com/user-attachments/assets/82fd86e7-e3ea-4dce-86d6-a80e48f4e02a" />
 
+<img width="366" height="643" alt="Screen 5" src="https://github.com/user-attachments/assets/7075e9f5-1238-4c57-8a9f-4875b906d5da" />
+<img width="375" height="651" alt="Screen 6" src="https://github.com/user-attachments/assets/35df4015-c59d-4c2a-b1d9-8fe1b92f0882" />
 
 ---
 
