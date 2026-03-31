@@ -8,6 +8,21 @@ A mobile-first shipping application that lets users create shipments, purchase p
 
 MobiShip simplifies the consumer shipping experience by handling the full shipment lifecycle in one app: enter package details, compare rates, pay, get a QR code, drop off at the nearest location, and track delivery in real time.
 
+## Preview
+
+<img width="385" height="648" alt="Screen 1" src="https://github.com/user-attachments/assets/dc84af9e-b8f8-4f93-95eb-038672072256" />
+<img width="385" height="648" alt="Screen 1" src="https://github.com/user-attachments/assets/dc84af9e-b8f8-4f93-95eb-038672072256" />
+
+<img width="377" height="650" alt="Screen 2" src="https://github.com/user-attachments/assets/8c02b126-6bb6-4ef3-9aa3-e8132ed9cab2" />
+<img width="377" height="650" alt="Screen 2" src="https://github.com/user-attachments/assets/8c02b126-6bb6-4ef3-9aa3-e8132ed9cab2" />
+
+<img width="375" height="650" alt="Screen 3" src="https://github.com/user-attachments/assets/69d15c3e-ac84-48a2-bc14-588bb98c3da9" />
+<img width="375" height="650" alt="Screen 3" src="https://github.com/user-attachments/assets/69d15c3e-ac84-48a2-bc14-588bb98c3da9" />
+
+<img width="376" height="650" alt="Screen 4" src="https://github.com/user-attachments/assets/82fd86e7-e3ea-4dce-86d6-a80e48f4e02a" />
+<img width="376" height="650" alt="Screen 4" src="https://github.com/user-attachments/assets/82fd86e7-e3ea-4dce-86d6-a80e48f4e02a" />
+
+
 ---
 
 ## Features
