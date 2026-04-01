@@ -27,38 +27,44 @@ const MobiShipTopNav = ({ showBack }: TopNavProps) => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-card border-b border-border" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
-        <div className="flex items-center justify-between h-14 px-4">
+      <header className="sticky top-0 z-40 bg-card border-b border-border" style={{ paddingTop: 'max(0px, env(safe-area-inset-top))' }}>
+        <div className="flex h-14 items-center justify-between gap-2 px-3 sm:px-4">
           {showBack ? (
-            <button onClick={() => navigate(-1)} className="p-1 text-foreground">
+            <button type="button" onClick={() => navigate(-1)} className="shrink-0 p-1 text-foreground" aria-label="Go back">
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
           ) : (
-            <button onClick={() => setDrawerOpen(true)} className="p-1 text-foreground">
+            <button type="button" onClick={() => setDrawerOpen(true)} className="shrink-0 p-1 text-foreground" aria-label="Open menu">
               <Menu size={24} />
             </button>
           )}
-          <MobiShipLogo size="sm" />
+          <div className="min-w-0 flex-1 flex justify-center px-1">
+            <MobiShipLogo size="sm" />
+          </div>
           <button
+            type="button"
             onClick={() => navigate('/account')}
-            className="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-heading font-bold text-sm"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-heading font-bold text-accent-foreground"
           >
             {user?.initials || 'U'}
           </button>
         </div>
       </header>
 
-      {/* Drawer */}
+      {/* Drawer — left edge aligns with centered .mobile-shell (430px), not viewport left on desktop */}
       {drawerOpen && (
         <div className="fixed inset-0 z-[60]" onClick={() => setDrawerOpen(false)}>
           <div className="absolute inset-0 bg-black/40" />
           <div
-            className="absolute left-0 top-0 bottom-0 w-72 bg-card shadow-xl animate-fade-in"
+            className="absolute top-0 bottom-0 left-[max(0px,calc((100vw-430px)/2))] w-[min(18rem,calc(min(100vw,430px)-1.5rem))] max-w-[85vw] bg-card shadow-xl animate-fade-in"
+            style={{ paddingTop: 'env(safe-area-inset-top)' }}
             onClick={e => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between border-b border-border p-4">
               <MobiShipLogo size="sm" />
-              <button onClick={() => setDrawerOpen(false)}><X size={24} /></button>
+              <button type="button" onClick={() => setDrawerOpen(false)} aria-label="Close menu">
+                <X size={24} />
+              </button>
             </div>
             <nav className="p-2">
               {menuItems.map(item => (

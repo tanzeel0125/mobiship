@@ -23,7 +23,7 @@ const UseImages = () => {
   };
 
   return (
-    <div className="mobile-shell min-h-screen">
+    <div className="mobile-shell min-h-[100dvh]">
       <MobiShipTopNav showBack />
       <div className="px-4 py-4 page-enter">
         <h1 className="font-heading text-lg font-bold mb-1">Use Images</h1>

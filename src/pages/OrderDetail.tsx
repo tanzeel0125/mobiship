@@ -12,10 +12,10 @@ const OrderDetail = () => {
   const orders = useAppStore(s => s.orders);
   const order = orders.find(o => o.id === id);
 
-  if (!order) return <div className="mobile-shell min-h-screen flex items-center justify-center text-muted-foreground">Order not found</div>;
+  if (!order) return <div className="mobile-shell flex min-h-[100dvh] items-center justify-center px-4 text-center text-muted-foreground">Order not found</div>;
 
   return (
-    <div className="mobile-shell pb-20 min-h-screen">
+    <div className="mobile-shell min-h-[100dvh] pb-20">
       <MobiShipTopNav showBack />
       <div className="px-4 py-4 space-y-4 page-enter">
         <h1 className="font-heading text-lg font-bold">Order #{order.id} Details</h1>
@@ -23,23 +23,27 @@ const OrderDetail = () => {
         {/* Carrier */}
         <div className="flex items-center gap-3">
           <CarrierBadge carrier={order.carrier} />
-          <div>
-            <p className="font-heading font-bold text-sm">{order.carrier}</p>
-            <p className="font-mono text-xs text-muted-foreground">#{order.trackingNumber}</p>
+          <div className="min-w-0">
+            <p className="font-heading text-sm font-bold">{order.carrier}</p>
+            <p className="break-all font-mono text-xs text-muted-foreground">#{order.trackingNumber}</p>
           </div>
         </div>
 
         {/* From → To */}
-        <div className="bg-card rounded-xl shadow-card p-4">
-          <div className="flex items-center gap-3">
-            <div className="flex-1">
-              <p className="font-medium text-sm">{order.senderName}</p>
-              <p className="text-xs text-muted-foreground">{order.senderAddress}</p>
+        <div className="rounded-xl bg-card p-4 shadow-card">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-3">
+            <div className="min-w-0 flex-1 sm:text-left">
+              <p className="text-xs font-medium text-muted-foreground">From</p>
+              <p className="text-sm font-medium">{order.senderName}</p>
+              <p className="break-words text-xs text-muted-foreground">{order.senderAddress}</p>
             </div>
-            <ArrowRight size={18} className="text-accent shrink-0" />
-            <div className="flex-1 text-right">
-              <p className="font-medium text-sm">{order.recipientName}</p>
-              <p className="text-xs text-muted-foreground">{order.recipientAddress}</p>
+            <div className="flex justify-center sm:shrink-0 sm:pt-6">
+              <ArrowRight size={18} className="text-accent sm:rotate-0 rotate-90" aria-hidden />
+            </div>
+            <div className="min-w-0 flex-1 sm:text-right">
+              <p className="text-xs font-medium text-muted-foreground">To</p>
+              <p className="text-sm font-medium">{order.recipientName}</p>
+              <p className="break-words text-xs text-muted-foreground">{order.recipientAddress}</p>
             </div>
           </div>
         </div>

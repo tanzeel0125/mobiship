@@ -52,7 +52,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="mobile-shell pb-24 min-h-screen">
+    <div className="mobile-shell min-h-[100dvh] pb-24">
       <MobiShipTopNav showBack />
       <div className="px-4 py-4 space-y-4 page-enter">
         <h1 className="font-heading text-lg font-bold">Payment Details</h1>
@@ -83,9 +83,9 @@ const Payment = () => {
                 <input value={cardNum} onChange={e => setCardNum(e.target.value)} placeholder="Card Number" className="w-full h-12 px-4 pr-16 rounded-[10px] border border-border bg-card text-sm outline-none focus:border-accent font-mono" />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-blue-700">VISA</span>
               </div>
-              <div className="flex gap-3">
-                <input value={expiry} onChange={e => setExpiry(e.target.value)} placeholder="MM/YY" className="flex-1 h-12 px-4 rounded-[10px] border border-border text-sm outline-none focus:border-accent font-mono" />
-                <input value={cvv} onChange={e => setCvv(e.target.value)} placeholder="CVV" type="password" maxLength={4} className="w-24 h-12 px-4 rounded-[10px] border border-border text-sm outline-none focus:border-accent font-mono" />
+              <div className="flex min-w-0 flex-wrap gap-3">
+                <input value={expiry} onChange={e => setExpiry(e.target.value)} placeholder="MM/YY" className="min-w-0 flex-1 basis-[8rem] h-12 px-4 rounded-[10px] border border-border font-mono text-sm outline-none focus:border-accent" />
+                <input value={cvv} onChange={e => setCvv(e.target.value)} placeholder="CVV" type="password" maxLength={4} className="h-12 w-20 min-w-[4.5rem] shrink-0 rounded-[10px] border border-border px-3 font-mono text-sm outline-none focus:border-accent sm:w-24 sm:px-4" />
               </div>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" defaultChecked className="accent-accent" />
@@ -111,13 +111,16 @@ const Payment = () => {
         </div>
       </div>
 
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] px-4 pb-6 bg-gradient-to-t from-background to-transparent pt-6 z-30">
-        <button onClick={handlePay} disabled={loading} className="w-full h-[52px] bg-accent text-accent-foreground rounded-xl font-heading font-bold text-sm btn-press disabled:opacity-60 flex items-center justify-center">
-          {loading ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : `Pay $${total.toFixed(2)}`}
+      <div
+        className="mobile-fixed-bar bottom-0 z-30 bg-gradient-to-t from-background to-transparent pt-6"
+        style={{ paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+      >
+        <button type="button" onClick={handlePay} disabled={loading} className="btn-press flex h-[52px] w-full items-center justify-center rounded-xl bg-accent font-heading text-sm font-bold text-accent-foreground disabled:opacity-60">
+          {loading ? <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" /> : `Pay $${total.toFixed(2)}`}
         </button>
-        <div className="flex items-center justify-center gap-1 mt-2">
-          <Lock size={12} className="text-muted-foreground" />
-          <span className="text-[10px] text-muted-foreground">Secure Payment 256-bit SSL Encryption</span>
+        <div className="mt-2 flex items-center justify-center gap-1 px-1 text-center">
+          <Lock size={12} className="shrink-0 text-muted-foreground" />
+          <span className="text-[10px] leading-snug text-muted-foreground">Secure Payment 256-bit SSL Encryption</span>
         </div>
       </div>
     </div>

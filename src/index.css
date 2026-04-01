@@ -43,11 +43,23 @@
 }
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  html,
+  body,
+  #root {
+    overflow-x: clip;
+    max-width: 100%;
+  }
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground font-body antialiased;
+    min-height: 100dvh;
+    min-height: 100vh;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
@@ -60,15 +72,19 @@
   }
 }
 
-/* Mobile shell */
+/* Mobile shell — primary layout for phone-first UI */
 .mobile-shell {
-  max-width: 430px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: min(100%, 430px);
+  margin-left: auto;
+  margin-right: auto;
   min-height: 100dvh;
+  min-height: 100vh;
   position: relative;
   background: hsl(var(--background));
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: border-box;
 }
 
 @media (min-width: 431px) {
@@ -77,6 +93,32 @@
     border-right: 1px solid hsl(var(--border));
     box-shadow: 0 0 40px rgba(0,0,0,0.08);
   }
+}
+
+/*
+  Extra top inset for auth / standalone screens on small viewports.
+  Tailwind py-* overrides .mobile-shell safe-area; this restores safe-area + breathing room.
+  Mobile-first: larger offset; sm+ slightly tighter.
+*/
+.shell-top-inset {
+  padding-top: max(3rem, calc(env(safe-area-inset-top, 0px) + 2rem));
+}
+@media (min-width: 640px) {
+  .shell-top-inset {
+    padding-top: max(3rem, calc(env(safe-area-inset-top, 0px) + 1.75rem));
+  }
+}
+
+/* Fixed bars aligned to the same width as .mobile-shell (not full viewport on tablet/desktop) */
+.mobile-fixed-bar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 430px);
+  max-width: 430px;
+  box-sizing: border-box;
+  padding-left: max(0.75rem, env(safe-area-inset-left));
+  padding-right: max(0.75rem, env(safe-area-inset-right));
 }
 
 /* Page transition */

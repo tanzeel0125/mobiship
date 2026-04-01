@@ -26,7 +26,7 @@ const Track = () => {
   };
 
   return (
-    <div className="mobile-shell pb-20 min-h-screen">
+    <div className="mobile-shell min-h-[100dvh] pb-20">
       <MobiShipTopNav />
       <div className="px-4 py-4 page-enter">
         <h1 className="font-heading text-lg font-bold mb-4">Track a Package</h1>
@@ -74,11 +74,11 @@ const Track = () => {
 
         {result && (
           <div className="animate-fade-in">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4 flex items-start gap-3">
               <CarrierBadge carrier={result.carrier} />
-              <div>
-                <p className="font-heading font-bold text-sm">{result.carrier} — {result.service}</p>
-                <p className="font-mono text-xs text-muted-foreground">{result.trackingNumber}</p>
+              <div className="min-w-0">
+                <p className="break-words font-heading text-sm font-bold">{result.carrier} — {result.service}</p>
+                <p className="break-all font-mono text-xs text-muted-foreground">{result.trackingNumber}</p>
               </div>
             </div>
             <div className="bg-card rounded-xl shadow-card p-4">

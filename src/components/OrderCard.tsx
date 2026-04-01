@@ -12,18 +12,18 @@ const OrderCard = ({ order, onClick, onReturn }: Props) => (
     onClick={onClick}
     className="bg-card rounded-xl shadow-card p-4 cursor-pointer active:scale-[0.99] transition-transform"
   >
-    <div className="flex items-start justify-between">
-      <div className="flex items-center gap-3">
+    <div className="flex items-start justify-between gap-2">
+      <div className="flex min-w-0 flex-1 items-center gap-3">
         <CarrierBadge carrier={order.carrier} />
-        <div>
-          <p className="font-heading font-semibold text-sm">{order.senderName}</p>
-          <p className="text-xs text-muted-foreground line-clamp-1">{order.senderAddress}</p>
+        <div className="min-w-0">
+          <p className="font-heading text-sm font-semibold">{order.senderName}</p>
+          <p className="line-clamp-2 text-xs text-muted-foreground break-words sm:line-clamp-1">{order.senderAddress}</p>
         </div>
       </div>
-      <span className="font-heading font-bold text-sm">${order.price.toFixed(2)}</span>
+      <span className="shrink-0 font-heading text-sm font-bold tabular-nums">${order.price.toFixed(2)}</span>
     </div>
-    <div className="flex items-center justify-between mt-3">
-      <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${
+    <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+      <span className={`max-w-full text-xs font-medium px-2.5 py-1 rounded-full break-words ${
         order.status === 'Delivered' ? 'bg-success/10 text-success' :
         order.status === 'In Transit' ? 'bg-accent/10 text-accent' :
         'bg-destructive/10 text-destructive'

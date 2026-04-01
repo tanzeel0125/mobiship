@@ -22,13 +22,13 @@ const Referrals = () => {
   };
 
   return (
-    <div className="mobile-shell min-h-screen">
+    <div className="mobile-shell min-h-[100dvh]">
       <MobiShipTopNav showBack />
       <div className="page-enter">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-navy to-navy-mid p-6 text-center">
-          <div className="text-5xl mb-4">🎁</div>
-          <h1 className="font-heading text-xl font-bold text-primary-foreground mb-2">Invite Friends & Earn Rewards!</h1>
+        <div className="bg-gradient-to-br from-navy to-navy-mid p-4 text-center sm:p-6">
+          <div className="mb-4 text-5xl">🎁</div>
+          <h1 className="mb-2 font-heading text-lg font-bold text-primary-foreground sm:text-xl">Invite Friends & Earn Rewards!</h1>
           <p className="text-sm text-primary-foreground/70">
             Invite your friends and earn $5 in shipping credit for each referral when they sign up and ship a package. Your friends also get $5 off their first shipment!
           </p>
@@ -56,14 +56,16 @@ const Referrals = () => {
           </div>
 
           {/* Share */}
-          <div className="flex gap-3">
-            <button className="flex-1 h-12 bg-card rounded-xl shadow-card flex items-center justify-center gap-2 text-sm font-medium btn-press">
-              <Share2 size={16} className="text-accent" /> Share Link
+          <div className="grid grid-cols-3 gap-2">
+            <button type="button" className="btn-press flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 rounded-xl bg-card px-1 text-[10px] font-medium leading-tight shadow-card sm:flex-row sm:gap-1.5 sm:text-xs">
+              <Share2 size={16} className="shrink-0 text-accent" />
+              <span className="text-center">Share</span>
             </button>
-            <button className="flex-1 h-12 bg-card rounded-xl shadow-card flex items-center justify-center gap-2 text-sm font-medium btn-press">
-              <Users size={16} className="text-accent" /> Invite Contacts
+            <button type="button" className="btn-press flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 rounded-xl bg-card px-1 text-[10px] font-medium leading-tight shadow-card sm:flex-row sm:gap-1.5 sm:text-xs">
+              <Users size={16} className="shrink-0 text-accent" />
+              <span className="text-center">Invite</span>
             </button>
-            <button className="w-12 h-12 bg-card rounded-xl shadow-card flex items-center justify-center btn-press">
+            <button type="button" className="btn-press flex h-12 items-center justify-center rounded-xl bg-card shadow-card" aria-label="More options">
               <MoreHorizontal size={16} className="text-muted-foreground" />
             </button>
           </div>

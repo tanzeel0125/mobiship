@@ -28,22 +28,22 @@ const Onboarding = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col min-h-screen bg-card">
-      <div className="flex justify-end p-4">
+    <div className="mobile-shell shell-top-inset flex min-h-[100dvh] flex-col bg-card">
+      <div className="flex justify-end px-3 pb-3 pt-0 sm:px-4 sm:pb-4">
         <button onClick={() => navigate('/login')} className="text-sm font-medium text-muted-foreground">
           Skip
         </button>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center px-8 animate-fade-in" key={current}>
-        <div className={`w-40 h-40 rounded-full ${slides[current].color} flex items-center justify-center mb-8`}>
-          {(() => { const Icon = slides[current].icon; return <Icon size={64} className="text-accent" />; })()}
+      <div className="flex flex-1 flex-col items-center justify-center px-5 animate-fade-in sm:px-8" key={current}>
+        <div className={`mb-6 flex h-36 w-36 items-center justify-center rounded-full sm:mb-8 sm:h-40 sm:w-40 ${slides[current].color}`}>
+          {(() => { const Icon = slides[current].icon; return <Icon className="h-14 w-14 text-accent sm:h-16 sm:w-16" strokeWidth={1.75} />; })()}
         </div>
-        <h1 className="font-heading text-2xl font-bold text-center mb-3">{slides[current].title}</h1>
-        <p className="text-center text-muted-foreground text-sm max-w-xs">{slides[current].subtitle}</p>
+        <h1 className="mb-3 max-w-[20rem] px-1 text-center font-heading text-xl font-bold sm:text-2xl">{slides[current].title}</h1>
+        <p className="max-w-xs px-1 text-center text-sm text-muted-foreground">{slides[current].subtitle}</p>
       </div>
 
-      <div className="px-8 pb-8">
+      <div className="px-5 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-8">
         <div className="flex items-center justify-center gap-2 mb-6">
           {slides.map((_, i) => (
             <div key={i} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? 'bg-accent' : 'bg-border'}`} />

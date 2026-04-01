@@ -21,12 +21,12 @@ const TrackingTimeline = ({ steps }: Props) => (
             <div className={`w-0.5 flex-1 min-h-[32px] ${step.completed ? 'bg-success' : 'bg-border'}`} />
           )}
         </div>
-        <div className="pb-6">
-          <p className={`text-sm font-semibold ${step.completed ? 'text-foreground' : 'text-muted-foreground'}`}>
+        <div className="min-w-0 flex-1 pb-6">
+          <p className={`break-words text-sm font-semibold ${step.completed ? 'text-foreground' : 'text-muted-foreground'}`}>
             {step.status}
           </p>
-          <p className="text-xs text-muted-foreground">{step.location}</p>
-          <p className="text-xs text-muted-foreground">{step.timestamp}</p>
+          <p className="break-words text-xs text-muted-foreground">{step.location}</p>
+          <p className="break-words text-xs text-muted-foreground">{step.timestamp}</p>
         </div>
       </div>
     ))}

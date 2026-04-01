@@ -16,8 +16,10 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen bg-card px-6 py-8 page-enter">
-      <div className="flex justify-center mb-8"><MobiShipLogo /></div>
+    <div className="mobile-shell shell-top-inset min-h-[100dvh] bg-card px-4 pb-8 page-enter sm:px-6">
+      <div className="mb-8 flex justify-center">
+        <MobiShipLogo />
+      </div>
       <h1 className="font-heading text-xl font-bold text-center">Reset your password</h1>
       <p className="text-center text-muted-foreground text-sm mt-1 mb-6">Enter your email and we'll send a reset link</p>
 
