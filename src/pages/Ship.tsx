@@ -59,20 +59,20 @@ const Ship = ({ prefillReturn }: ShipPageProps) => {
   };
 
   return (
-    <div className="mobile-shell pb-24">
+    <div className="mobile-shell min-h-[100dvh] pb-24">
       <MobiShipTopNav showBack />
       <div className="px-4 py-4 space-y-5 page-enter">
         {/* My Location */}
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <MapPin size={14} className="text-accent" />
-          <span>My Location: {user?.location?.split(',').pop()?.trim() || 'San Marcos, CA 92069'}</span>
+        <div className="flex items-start gap-2 text-sm text-muted-foreground">
+          <MapPin size={14} className="mt-0.5 shrink-0 text-accent" />
+          <span className="min-w-0 break-words">My Location: {user?.location?.split(',').pop()?.trim() || 'San Marcos, CA 92069'}</span>
         </div>
 
         {/* Shipping To */}
         <div>
-          <div className="flex items-center justify-between mb-2">
-            <label className="font-heading font-bold text-sm">Shipping To</label>
-            <button onClick={() => navigate('/account/addresses')} className="text-xs text-accent font-medium">Use Address Book</button>
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <label className="font-heading text-sm font-bold">Shipping To</label>
+            <button type="button" onClick={() => navigate('/account/addresses')} className="shrink-0 text-xs font-medium text-accent">Use Address Book</button>
           </div>
           <div className="relative">
             <input
@@ -96,9 +96,9 @@ const Ship = ({ prefillReturn }: ShipPageProps) => {
 
         {/* What I'm Shipping */}
         <div>
-          <div className="flex items-center justify-between mb-2">
-            <label className="font-heading font-bold text-sm">What I'm Shipping</label>
-            <button onClick={() => navigate('/ship/use-images')} className="text-xs text-accent font-medium">Use Images</button>
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <label className="font-heading text-sm font-bold">What I'm Shipping</label>
+            <button type="button" onClick={() => navigate('/ship/use-images')} className="shrink-0 text-xs font-medium text-accent">Use Images</button>
           </div>
           <div className="relative">
             <input
@@ -173,13 +173,13 @@ const Ship = ({ prefillReturn }: ShipPageProps) => {
                     selectedCarrier === i ? 'ring-2 ring-accent' : ''
                   }`}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <CarrierBadge carrier={c.carrier} />
-                    <div className="flex-1">
-                      <p className="font-heading font-semibold text-sm">Carrier: {c.carrier}</p>
-                      <p className="text-xs text-muted-foreground">Service: {c.service} | Delivery: {c.delivery}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="font-heading text-sm font-semibold">Carrier: {c.carrier}</p>
+                      <p className="break-words text-xs text-muted-foreground">Service: {c.service} | Delivery: {c.delivery}</p>
                     </div>
-                    <span className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 ${
+                    <span className={`flex shrink-0 items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-bold sm:px-3 ${
                       selectedCarrier === i ? 'bg-accent text-accent-foreground' : 'bg-navy text-primary-foreground'
                     }`}>
                       {selectedCarrier === i && <Check size={14} />}
@@ -196,7 +196,10 @@ const Ship = ({ prefillReturn }: ShipPageProps) => {
       </div>
 
       {/* Sticky CTA */}
-      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 w-full max-w-[430px] px-4 pb-4 bg-gradient-to-t from-background to-transparent pt-6 z-30">
+      <div
+        className="mobile-fixed-bar bottom-16 z-30 bg-gradient-to-t from-background to-transparent pt-6 pb-4"
+        style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+      >
         <button
           onClick={handleReview}
           disabled={!address || !showRates}

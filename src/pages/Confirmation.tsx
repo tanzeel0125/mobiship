@@ -8,12 +8,12 @@ const Confirmation = () => {
   const orderId = sessionStorage.getItem('mobiship_last_order_id') || '102334';
 
   return (
-    <div className="mobile-shell pb-20 min-h-screen bg-gradient-to-b from-blue-50 via-background to-background">
-      <div className="px-6 pt-12 pb-8 page-enter">
-        <div className="text-center mb-8">
-          <h1 className="font-heading text-2xl font-bold mb-6">Thank you!</h1>
-          <div className="inline-block bg-card rounded-2xl shadow-card p-6">
-            <QRCodeSVG value={`mobiship://order/${orderId}`} size={180} bgColor="transparent" fgColor="#0B1F3A" />
+    <div className="mobile-shell min-h-[100dvh] bg-gradient-to-b from-blue-50 via-background to-background pb-20">
+      <div className="page-enter px-4 pb-8 pt-10 sm:px-6 sm:pt-12">
+        <div className="mb-8 text-center">
+          <h1 className="mb-6 font-heading text-xl font-bold sm:text-2xl">Thank you!</h1>
+          <div className="inline-block max-w-full rounded-2xl bg-card p-4 shadow-card sm:p-6">
+            <QRCodeSVG value={`mobiship://order/${orderId}`} size={168} className="mx-auto h-auto w-full max-w-[168px]" bgColor="transparent" fgColor="#0B1F3A" />
           </div>
           <p className="font-mono text-sm text-muted-foreground mt-4">Order #{orderId}</p>
         </div>

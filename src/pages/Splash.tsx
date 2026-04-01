@@ -23,7 +23,7 @@ const Splash = () => {
   }, [ready, user, navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-navy" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+    <div className="shell-top-inset flex min-h-[100dvh] flex-col items-center justify-center bg-navy px-4 pb-[max(1rem,env(safe-area-inset-bottom,0px))]">
       <div className="animate-fade-in flex flex-col items-center gap-5">
         <img
           src={appIcon}

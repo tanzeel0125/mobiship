@@ -7,7 +7,7 @@ const AddToWallet = () => {
   const orderId = sessionStorage.getItem('mobiship_last_order_id') || '102334';
 
   return (
-    <div className="mobile-shell min-h-screen flex flex-col items-center justify-center px-6 page-enter">
+    <div className="mobile-shell shell-top-inset flex min-h-[100dvh] flex-col items-center justify-center px-4 pb-8 page-enter sm:px-6">
       <div className="bg-card rounded-2xl shadow-card p-8 w-full text-center">
         <div className="w-20 h-20 mx-auto mb-6 bg-muted rounded-2xl flex items-center justify-center">
           <Smartphone size={40} className="text-accent" />

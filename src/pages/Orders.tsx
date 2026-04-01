@@ -22,7 +22,7 @@ const Orders = () => {
   });
 
   return (
-    <div className="mobile-shell pb-20 min-h-screen">
+    <div className="mobile-shell min-h-[100dvh] pb-20">
       <MobiShipTopNav />
       <div className="px-4 py-4 page-enter">
         <h1 className="font-heading text-lg font-bold mb-4">My Orders</h1>

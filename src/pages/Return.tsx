@@ -36,7 +36,7 @@ const Return = () => {
   const selectClass = "w-full h-12 px-4 rounded-[10px] border border-border bg-card text-sm outline-none focus:border-accent";
 
   return (
-    <div className="mobile-shell pb-20 min-h-screen">
+    <div className="mobile-shell min-h-[100dvh] pb-20">
       <MobiShipTopNav />
       <div className="px-4 py-4 space-y-4 page-enter">
         <div>
@@ -69,10 +69,10 @@ const Return = () => {
 
         <div>
           <label className="font-heading font-bold text-sm block mb-2">Package Condition</label>
-          <div className="flex gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
             {(['original', 'different'] as const).map(p => (
-              <button key={p} onClick={() => setPackaging(p)}
-                className={`flex-1 h-12 rounded-xl text-sm font-medium transition-all ${
+              <button key={p} type="button" onClick={() => setPackaging(p)}
+                className={`min-h-12 flex-1 rounded-xl px-2 py-3 text-center text-xs font-medium transition-all sm:text-sm ${
                   packaging === p ? 'bg-accent text-accent-foreground' : 'border-2 border-border text-foreground'
                 }`}>
                 {p === 'original' ? 'Original Packaging' : 'Different Packaging'}

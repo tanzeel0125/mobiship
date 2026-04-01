@@ -18,7 +18,7 @@ const Addresses = () => {
   };
 
   return (
-    <div className="mobile-shell min-h-screen">
+    <div className="mobile-shell min-h-[100dvh]">
       <MobiShipTopNav showBack />
       <div className="px-4 py-4 page-enter">
         <div className="flex items-center justify-between mb-4">

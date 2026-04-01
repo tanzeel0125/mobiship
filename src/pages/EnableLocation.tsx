@@ -15,8 +15,8 @@ const EnableLocation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-background flex flex-col items-center justify-center px-6 page-enter">
-      <div className="bg-card rounded-2xl shadow-card p-8 w-full max-w-sm text-center">
+    <div className="mobile-shell shell-top-inset flex min-h-[100dvh] flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-background px-4 pb-8 page-enter sm:px-6">
+      <div className="w-full max-w-sm rounded-2xl bg-card p-6 text-center shadow-card sm:p-8">
         <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
           <MapPin size={40} className="text-accent" />
         </div>
